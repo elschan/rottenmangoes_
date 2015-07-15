@@ -7,21 +7,42 @@
 // [class^=col] { outline: 1px solid blue; }
 
 #title {
-text-align: center;
-color: red;
+color: green;
+text-align: right;
+float: right;
+margin-top: -45px;
+position: absolute;
+}
+
+#submit_movie {
+  padding-top: 20px;
+}
+
+#signed_in_as {
+  margin-top: 30px; 
+  margin-left: 100px; 
+}
+
+footer {
+  margin: 50px 0;
+  margin-left: 40px;
 
 }
 
-
 body {
+padding-top: 70px;
 color: green;
   background-color: #FFFFFF
  !important;
 }
 
+#spaced {
+  height: 160px;
+}
 img {
   max-width: 200px;
   max-height: 200px;
+  
 }
 // 
 // li { background: green; }

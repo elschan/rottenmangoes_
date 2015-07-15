@@ -1,15 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>RottenMangoes</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RottenMangoes</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value) %>
-<% end %>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <% if current_user %>
+                    <li>
+                         <a><%= link_to "Log out", session_path("current"), method: :delete %></a>
+                    </li>
+                    <li>
+                        <a><%= link_to "Submit a Movie", new_movie_path %></a>
+                    </li>
+                      <% else %>
+                     <li>
+                      <a>  <%= link_to "Log In", new_session_path %></a> 
+                    </li>  
+                    <li>
+                        <a></a>
+                    </li>
+                     <li>
+                        <a><%= link_to "Sign Up", new_user_path %></a>
+                    </li>
+                      <% end %>
+                   
+                    
+
+                </ul>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+               <h1 class="page-header">Rotten Mangoes
+                    <% if current_user %>
+                  <small>Hi <%= current_user.full_name %></small>
+                  <% end %>
+                   <% flash.each do |key, value| %>
+                  <small><%= content_tag(:div, value) %></small>
+                  <% end %>
+              </h1>
+          </div>
+        </div>            
+    </nav>     
+<div id= "spaced"></div>
 <div class="container-fluid">
   <%= yield %>
 </div>
