@@ -1,0 +1,31 @@
+<h1>Admin New User</h1>
+<%= form_for [:admin, @user] do |f| %>
+  <div>
+    <%= f.label "email" %><br>
+    <%= f.text_field "email" %>
+  </div>
+  <div>
+    <%= f.label "firstname", "First Name" %><br>
+    <%= f.text_field "firstname" %>
+  </div>
+  <div>
+    <%= f.label "lastname", "Last Name" %><br>
+    <%= f.text_field "lastname" %>
+  </div>
+  <div>
+    <%= f.label "password" %><br>
+    <%= f.password_field "password" %>
+  </div>
+  <div>
+    <%= f.label "password_confirmation" %><br>
+    <%= f.password_field "password_confirmation" %>
+  </div>
+   <div>
+    <%= f.label "admin", "Admin" %>
+    <%= f.check_box "admin" %>
+  </div>
+  <div><%= f.submit "Submit" %></div>
+<% end %>
+<br>
+<br>
+<%= link_to "Back to User Index", admin_users_path %>

@@ -1,0 +1,32 @@
+
+  <div>
+      <%= form_tag(movies_path, method: 'get', class: "form-inline") do %>
+        <div class="form-group">
+          <%= label_tag(:t, "Enter Movie Title or Director") %>
+          <%= text_field_tag(:t) %>
+        </div>
+        <!-- <%= label_tag(:d, "Search Movie Director:") %>
+        <%= text_field_tag(:d) %> -->
+        <div class="form-group">
+        <%= label_tag(:length, "Movie Length:") %>
+        <%= select_tag(:length, "<option value='less90'>Under 90 Minutes</option><option value='90to120'>From 90 to 120 Minutes</option><option value='120more'>More Than 120 Minutes</option>".html_safe, include_blank: true) %>
+      </div>
+        <%= submit_tag("Search") %>
+      <% end %>
+</div>
+<!-- <% if params[:t].present? %>
+  <p>Movies with '<%= params[:t] %>' in the title</p>
+<% end %>
+<% if params[:d].present? %>
+  <p>Movies with '<%= params[:d] %>' in the director name</p>
+<% end %>
+<% if params[:length].present? %>
+  <% case params[:length] %>
+  <% when 'less90' %>
+    <p>Movies shorter than 90 minutes</p>
+  <% when '90to120' %>
+    <p>Movies from 90 minutes to 120 minutes</p>
+  <% when '120more' %>
+    <p>Movies longer than 120 minutes</p>
+  <% end %>
+<% end %> -->

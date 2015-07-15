@@ -1,0 +1,30 @@
+<!-- <h2><%= link_to movie.title, movie_path(movie) %></h2> -->
+<!-- <div class="col-md-2">
+  <%= link_to image_tag(movie.poster_url.to_s, class: "thumbnail"), movie_path(movie) %>
+</div>
+<div class="col-md-8">
+  <small>(<%= link_to "edit this movie", edit_movie_path(movie) %>)</small>
+  <p>Rating: <%= movie.review_average %>/10</p>
+  <h3><%= formatted_date(movie.release_date) %></h3>
+  <h4>Directed by:  <%= movie.director %> | Runtime: <%= movie.runtime_in_minutes %> minutes</h4>
+  <p><%= movie.description %></p>
+</div> -->
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+        <a class: "thumbnail">  <%= link_to image_tag(movie.poster_url.to_s), movie_path(movie) %></a>
+        </div>
+        <div class="col-md-7">
+          <small>(<%= link_to "edit this movie", edit_movie_path(movie) %>)</small>
+          <p>Rating: <%= movie.review_average %>/10</p>
+          <h3><%= formatted_date(movie.release_date) %></h3>
+          <h4>Directed by:  <%= movie.director %> | Runtime: <%= movie.runtime_in_minutes %> minutes</h4>
+          <p><%= movie.description %></p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row"></div>
+</div>
